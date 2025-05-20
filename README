@@ -1,33 +1,63 @@
-# Sistema de Irrigação Inteligente - FarmTech Solutions
+# 🌱 FarmTech Solutions — Fase 3
 
-Este projeto simula um sistema de irrigação inteligente utilizando sensores físicos simulados na plataforma Wokwi e um microcontrolador ESP32.
-
-## Descrição
-
-O sistema lê dados de sensores que simulam a presença de fósforo e potássio (botões), o pH do solo (sensor LDR) e a umidade do solo (sensor DHT22). Com base nesses dados, o ESP32 controla uma bomba de irrigação (relé), ligando ou desligando conforme a necessidade.
-
-## Componentes
-
-- ESP32
-- Botões para sensores de fósforo e potássio
-- Sensor LDR para pH
-- Sensor DHT22 para umidade do solo
-- Relé para controle da bomba de irrigação
-
-## Funcionamento
-
-- Se a umidade estiver abaixo de 40%, ou se fósforo ou potássio estiverem ausentes, ou se o valor do LDR indicar pH alto, a bomba será ligada.
-- Caso contrário, a bomba permanece desligada.
-- As leituras dos sensores e o status da bomba são exibidos no monitor serial.
-
-## Como usar
-
-1. Compile e envie o código para o ESP32 usando o PlatformIO ou Arduino IDE.
-2. Observe as leituras no monitor serial.
-3. Simule os sensores pressionando os botões ou variando a luz no LDR.
-
-## Arquivos
-
-- `main.cpp`: Código-fonte principal do sistema.
+Este repositório contém a implementação da **Fase 3** do projeto acadêmico da startup fictícia **FarmTech Solutions**, desenvolvido como parte do curso de Inteligência Artificial da FIAP. Esta fase foca na **simulação de sensores agrícolas com ESP32** e **armazenamento de dados em um banco relacional com Python**.
 
 ---
+
+## 📌 Objetivo
+
+Simular um sistema de monitoramento agrícola com sensores físicos utilizando o **ESP32** e realizar o **armazenamento dos dados lidos em um banco de dados SQLite** com **Python**, simulando um cenário real de coleta e gerenciamento de dados em agricultura digital.
+
+---
+
+## 🧠 Funcionalidades
+
+### ESP32 (Arduino/Wokwi)
+
+- Simulação de sensores:
+  - **DHT22**: leitura de umidade do solo
+  - **Botões**: simulam sensores de Fósforo e Potássio
+  - **LDR**: simula sensor de pH
+- **Relé virtual**: controle de bomba de irrigação automatizado com base na umidade
+- Envio dos dados via **Serial**
+
+### Python
+
+- Leitura dos dados simulados da serial
+- Armazenamento no banco de dados SQLite
+- Operações CRUD (Create, Read, Update, Delete)
+- Organização dos dados por vetor
+- Menu interativo com `while` e `if`
+
+---
+
+## ⚙️ Como rodar o projeto
+
+### 1. ESP32 no Wokwi
+
+- Acesse o Wokwi e carregue o código `.ino` localizado em `/esp32/farmtech_fase3.ino`
+- Monte o circuito conforme o arquivo `circuito_wokwi.png`
+- Inicie a simulação e observe os dados enviados pela porta Serial
+
+### 2. Python
+
+#### Pré-requisitos
+
+- Python 3.x instalado
+
+#### Rodar o script
+
+```bash
+cd python
+python script_crud_farmtech.py
+
+AUTOR
+Murilo de Faria Benhossi
+Curso: Tecnólogo em Inteligência Artificial - FIAP
+Semestre: 2º
+Entrega: Fase 3 — 2025
+
+OBSERVAÇÃO
+Este projeto é uma simulação acadêmica.
+Dados, sensores e comportamentos foram adaptados ao ambiente virtual Wokwi.
+O script Python pode ser evoluído para dashboards, APIs meteorológicas e sistemas de alerta.
