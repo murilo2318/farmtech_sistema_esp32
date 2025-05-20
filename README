@@ -1,0 +1,33 @@
+# Sistema de Irrigação Inteligente - FarmTech Solutions
+
+Este projeto simula um sistema de irrigação inteligente utilizando sensores físicos simulados na plataforma Wokwi e um microcontrolador ESP32.
+
+## Descrição
+
+O sistema lê dados de sensores que simulam a presença de fósforo e potássio (botões), o pH do solo (sensor LDR) e a umidade do solo (sensor DHT22). Com base nesses dados, o ESP32 controla uma bomba de irrigação (relé), ligando ou desligando conforme a necessidade.
+
+## Componentes
+
+- ESP32
+- Botões para sensores de fósforo e potássio
+- Sensor LDR para pH
+- Sensor DHT22 para umidade do solo
+- Relé para controle da bomba de irrigação
+
+## Funcionamento
+
+- Se a umidade estiver abaixo de 40%, ou se fósforo ou potássio estiverem ausentes, ou se o valor do LDR indicar pH alto, a bomba será ligada.
+- Caso contrário, a bomba permanece desligada.
+- As leituras dos sensores e o status da bomba são exibidos no monitor serial.
+
+## Como usar
+
+1. Compile e envie o código para o ESP32 usando o PlatformIO ou Arduino IDE.
+2. Observe as leituras no monitor serial.
+3. Simule os sensores pressionando os botões ou variando a luz no LDR.
+
+## Arquivos
+
+- `main.cpp`: Código-fonte principal do sistema.
+
+---
